@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body class="dark-theme">
+    <div class="background-overlay"></div>
+    <div class="background-3d" id="background-3d"></div>
+
+    <nav class="navbar glass-effect">
+        <div class="nav-brand">⌚ Focus Timer</div>
+        <ul class="nav-links">
+            <li><a href="#timer" class="active">Stopwatch</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Timer Section -->
+    <section id="timer" class="timer-section">
+        <div class="timer-container glass-effect">
+            <div class="session-info">
+                <h2>Focus Session</h2>
+                <p class="session-status">Stay focused and productive</p>
+            </div>
+
+            <div class="time-display">
+                <div class="time-segment">
+                    <span id="hours">00</span>
+                    <label>hours</label>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-segment">
+                    <span id="minutes">00</span>
+                    <label>minutes</label>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-segment">
+                    <span id="seconds">00</span>
+                    <label>seconds</label>
+                </div>
+                <div class="time-separator">.</div>
+                <div class="time-segment">
+                    <span id="milliseconds">00</span>
+                    <label>ms</label>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+            <div class="timer-controls">
+                <button id="startBtn" class="control-btn primary">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">Start Focus</span>
+                </button>
+                <button id="pauseBtn" class="control-btn warning">
+                    <span class="btn-icon">⏸</span>
+                    <span class="btn-text">Pause</span>
+                </button>
+                <button id="resetBtn" class="control-btn danger">
+                    <span class="btn-icon">⟲</span>
+                    <span class="btn-text">Reset</span>
+                </button>
+                <button id="lapBtn" class="control-btn info">
+                    <span class="btn-icon">⏱️</span>
+                    <span class="btn-text">Lap</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="lap-container glass-effect">
+            <h3>Lap Times</h3>
+            <div class="lap-list-container">
+                <ul id="lapList" class="custom-scrollbar"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about glass-effect">
+        <div class="about-content">
+            <h2>Master Your Focus</h2>
+            <p class="subtitle">Transform your work sessions into deep focus experiences</p>
+
+            <div class="features-grid">
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon">🧠</span>
+                    <h3>Flow State Timer</h3>
+                    <p>Designed to help you achieve and maintain flow state - the optimal state of consciousness for productivity</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Energy Management</h3>
+                    <p>25-minute focused sprints followed by breaks - work with your brain's natural rhythm</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Deep Work Mode</h3>
+                    <p>Minimalist interface eliminates distractions and helps you stay in the zone</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <span class="feature-icon">💡</span>
+                    <h3>Focus Tips</h3>
+                    <p id="focus-tip">Loading your personalized focus tip...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
